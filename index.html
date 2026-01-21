@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nella Aprilia | Portfolio</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
     <style>
         * {margin: 0; padding: 0; box-sizing: border-box;}
         body {font-family: 'Segoe UI', sans-serif; background: radial-gradient(circle at top, #0f172a, #020617); color: #fff; overflow-x: hidden;}
@@ -56,17 +57,62 @@
         .about-content h2::after {content: ''; position: absolute; bottom: -10px; left: 0; width: 100%; height: 3px; background: linear-gradient(90deg, #0064ff, #00d4ff);}
         .about-content p {font-size: 1.2rem; line-height: 1.8; color: #ccc;}
 
+        /* --- Updated Skill / Tech Stack Section --- */
         #skills {flex-direction: column; background: rgba(0,20,40,0.2);}
         .skills-header {text-align: center; margin-bottom: 3rem;}
-        .skills-header h2 {font-size: 2.5rem; color: #00d4ff; margin-bottom: 1rem;}
-        .skills-header p {font-size: 1.1rem; color: #ccc;}
-        .skills-grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; max-width: 1000px; width: 100%;}
-        .skill-category {background: rgba(0,30,60,0.4); border: 1px solid rgba(0,100,255,0.3); border-radius: 15px; padding: 2rem; transition: all 0.4s ease;}
-        .skill-category:hover {transform: translateY(-10px); border-color: #00d4ff; box-shadow: 0 10px 40px rgba(0,100,255,0.4);}
-        .skill-category h3 {color: #00d4ff; font-size: 1.5rem; margin-bottom: 1.5rem;}
-        .skill-items {display: flex; flex-wrap: wrap; gap: 0.8rem;}
-        .skill-item {background: rgba(0,100,255,0.15); color: #fff; padding: 0.6rem 1.2rem; border-radius: 25px; font-size: 0.95rem; border: 1px solid rgba(0,100,255,0.3); transition: all 0.3s ease;}
-        .skill-item:hover {background: rgba(0,100,255,0.3); border-color: #00d4ff; transform: translateY(-2px);}
+        .skills-header h2 {font-size: 3rem; color: #a855f7; margin-bottom: 0.5rem;}
+        .skills-header p {font-size: 1.1rem; color: #94a3b8;}
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            max-width: 1100px;
+            width: 100%;
+        }
+
+        .tech-card {
+            background: rgba(17, 24, 39, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 2rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+
+        .tech-card:hover {
+            transform: translateY(-10px);
+            background: rgba(31, 41, 55, 0.8);
+            border-color: rgba(168, 85, 247, 0.4);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .tech-card i {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .tech-card span {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #e2e8f0;
+        }
+
+        /* Ikon Colors */
+        .html-icon { color: #e34c26; }
+        .css-icon { color: #264de4; }
+        .js-icon { color: #f7df1e; }
+        .tailwind-icon { color: #38bdf8; }
+        .bootstrap-icon { color: #7952b3; }
+        .php-icon { color: #777bb4; }
+        .firebase-icon { color: #ffca28; }
+        .vercel-icon { color: #ffffff; }
+
+        /* --- End of Skills Update --- */
 
         #portfolio {flex-direction: column; padding: 6rem 5%;}
         .portfolio-header {text-align: center; margin-bottom: 3rem;}
@@ -93,6 +139,10 @@
         .contact-info a {color: #00d4ff; text-decoration: none; transition: all 0.3s ease;}
         .contact-info a:hover {color: #fff; text-shadow: 0 0 10px rgba(0,212,255,0.5);}
 
+        @media (max-width: 1024px) {
+            .tech-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+
         @media (max-width: 768px) {
             nav ul {gap: 1rem;}
             .welcome-title {font-size: 2.5rem;}
@@ -101,7 +151,8 @@
             .profile-img {width: 250px; height: 250px;}
             .stats-container {justify-content: center;}
             .portfolio-tabs {flex-wrap: wrap;}
-            .portfolio-grid, .skills-grid {grid-template-columns: 1fr;}
+            .portfolio-grid {grid-template-columns: 1fr;}
+            .tech-grid { grid-template-columns: repeat(2, 1fr); }
         }
     </style>
 </head>
@@ -150,55 +201,51 @@
         <div class="about-content">
             <h2>About Me</h2>
             <p>
-            Saya adalah mahasiswa Rekayasa Perangkat Lunak di Politeknik Manufaktur Negeri Bangka Belitung dengan minat besar pada pengembangan aplikasi web dan mobile serta UI/UX design.
-
-            Selama perkuliahan, saya telah mengembangkan berbagai proyek seperti aplikasi mobile berbasis Flutter, sistem berbasis web menggunakan PHP dan Laravel, serta desain antarmuka aplikasi menggunakan Figma. Beberapa aplikasi yang saya bangun juga terintegrasi dengan Firebase sebagai backend dan real-time database untuk mendukung sinkronisasi data secara langsung. Saya menikmati proses mengubah ide menjadi produk digital yang nyata dan bermanfaat.<br>
-
-            Saya terbiasa menggunakan teknologi seperti Flutter, HTML, CSS, JavaScript, PHP, Laravel, MySQL, Firebase, serta tools seperti Git, GitHub, dan Figma dalam pengembangan proyek.
-
-             Saat ini saya terus belajar dan terbuka untuk kolaborasi proyek, magang, maupun kesempatan di bidang frontend development dan web development.
-                </p>
-
+            Saya adalah mahasiswa Rekayasa Perangkat Lunak di Politeknik Manufaktur Negeri Bangka Belitung dengan minat besar pada pengembangan aplikasi web dan mobile serta UI/UX design. <br><br>
+            Selama perkuliahan, saya telah mengembangkan berbagai proyek seperti aplikasi mobile berbasis Flutter, sistem berbasis web menggunakan PHP dan Laravel, serta desain antarmuka aplikasi menggunakan Figma. <br><br>
+            Saya terbiasa menggunakan teknologi seperti Flutter, HTML, CSS, JavaScript, PHP, Laravel, MySQL, Firebase, serta tools seperti Git, GitHub, dan Figma.
+            </p>
         </div>
     </section>
 
     <section id="skills">
         <div class="skills-header">
-            <h2>Skills & Expertise</h2>
-            <p>Tools dan teknologi yang saya gunakan untuk menciptakan solusi digital</p>
+            <h2>Tech Stack</h2>
+            <p>This is the digital footprint of my journey.</p>
         </div>
-        <div class="skills-grid">
-            <div class="skill-category">
-                <h3>💻 Mobile Development</h3>
-                <div class="skill-items">
-                    <span class="skill-item">Flutter</span>
-                    <span class="skill-item">Dart</span>
-                    <span class="skill-item">Firebase</span>
-                    <span class="skill-item">Android Studio</span>
-                    <span class="skill-item">Mobile UI/UX</span>
-                </div>
+        
+        <div class="tech-grid">
+            <div class="tech-card">
+                <i class="devicon-html5-plain html-icon"></i>
+                <span>HTML</span>
             </div>
-            <div class="skill-category">
-                <h3>🌐 Web Development</h3>
-                <div class="skill-items">
-                    <span class="skill-item">Laravel</span>
-                    <span class="skill-item">PHP</span>
-                    <span class="skill-item">HTML/CSS</span>
-                    <span class="skill-item">JavaScript</span>
-                    <span class="skill-item">Bootstrap</span>
-                    <span class="skill-item">MySQL</span>
-                </div>
+            <div class="tech-card">
+                <i class="devicon-css3-plain css-icon"></i>
+                <span>CSS</span>
             </div>
-            <div class="skill-category">
-                <h3>🎨 Design & Tools</h3>
-                <div class="skill-items">
-                    <span class="skill-item">Figma</span>
-                    <span class="skill-item">UI/UX Design</span>
-                    <span class="skill-item">Git</span>
-                    <span class="skill-item">GitHub</span>
-                    <span class="skill-item">VS Code</span>
-                    <span class="skill-item">Postman</span>
-                </div>
+            <div class="tech-card">
+                <i class="devicon-javascript-plain js-icon"></i>
+                <span>JavaScript</span>
+            </div>
+            <div class="tech-card">
+                <i class="devicon-tailwindcss-original tailwind-icon"></i>
+                <span>Tailwind CSS</span>
+            </div>
+            <div class="tech-card">
+                <i class="devicon-bootstrap-plain bootstrap-icon"></i>
+                <span>Bootstrap</span>
+            </div>
+            <div class="tech-card">
+                <i class="devicon-php-plain php-icon"></i>
+                <span>PHP</span>
+            </div>
+            <div class="tech-card">
+                <i class="devicon-firebase-plain firebase-icon"></i>
+                <span>Firebase</span>
+            </div>
+            <div class="tech-card">
+                <i class="devicon-vercel-original vercel-icon"></i>
+                <span>Vercel</span>
             </div>
         </div>
     </section>
@@ -206,132 +253,33 @@
     <section id="portfolio">
         <div class="portfolio-header">
             <h2>Portfolio Showcase</h2>
-            <p>Explore my journey through projects, certifications, and technical expertise.</p>
+            <p>Explore my journey through projects and expertise.</p>
         </div>
         <div class="portfolio-tabs">
             <button class="tab-btn active" onclick="filterPortfolio('all')">All</button>
             <button class="tab-btn" onclick="filterPortfolio('projects')">Projects</button>
             <button class="tab-btn" onclick="filterPortfolio('certificates')">Certificates</button>
-            <button class="tab-btn" onclick="filterPortfolio('tech')">Tech Stack</button>
         </div>
         <div class="portfolio-grid">
             <div class="portfolio-item" data-category="projects">
-                <img src="medisense.jpg" class="portfolio-img" onerror="this.outerHTML='<div class=\'portfolio-img\'>📱</div>';">
+                <div class="portfolio-img">📱</div>
                 <div class="portfolio-content">
                     <h3>MediSense</h3>
-                    <p>Aplikasi mobile untuk deteksi dini gejala penyakit dengan analisis gejala yang akurat dan rekomendasi tindakan preventif berbasis AI.</p>
+                    <p>Aplikasi mobile untuk deteksi dini gejala penyakit berbasis AI.</p>
                     <div class="tech-stack">
                         <span class="tech-tag">Flutter</span>
                         <span class="tech-tag">Firebase</span>
-                        <span class="tech-tag">Real-time DB</span>
                     </div>
                 </div>
             </div>
             <div class="portfolio-item" data-category="projects">
-                <img src="gastrocare.jpg" class="portfolio-img" onerror="this.outerHTML='<div class=\'portfolio-img\'>🏥</div>';">
+                <div class="portfolio-img">🏥</div>
                 <div class="portfolio-content">
                     <h3>GastroCare</h3>
-                    <p>Platform kesehatan digital yang fokus pada deteksi dini dan manajemen penyakit maag dengan monitoring gejala harian.</p>
+                    <p>Platform kesehatan digital deteksi penyakit maag.</p>
                     <div class="tech-stack">
                         <span class="tech-tag">Flutter</span>
                         <span class="tech-tag">Firebase</span>
-                        <span class="tech-tag">Health Analytics</span>
-                    </div>
-                </div>
-            </div>
-            <div class="portfolio-item" data-category="projects">
-                <img src="images/maintify.jpg" class="portfolio-img" onerror="this.outerHTML='<div class=\'portfolio-img\'>🚜</div>';">
-                <div class="portfolio-content">
-                    <h3>Maintify</h3>
-                    <p>Sistem monitoring real-time untuk alat berat dengan tracking lokasi, performa mesin, dan analisis produktivitas.</p>
-                    <div class="tech-stack">
-                        <span class="tech-tag">Laravel</span>
-                        <span class="tech-tag">PHP</span>
-                        <span class="tech-tag">MySQL</span>
-                    </div>
-                </div>
-            </div>
-            <div class="portfolio-item" data-category="projects">
-                <img src="images/seminar.jpg" class="portfolio-img" onerror="this.outerHTML='<div class=\'portfolio-img\'>🎓</div>';">
-                <div class="portfolio-content">
-                    <h3>Seminar Management</h3>
-                    <p>Platform manajemen seminar terintegrasi penuh, dari registrasi peserta hingga sertifikat digital otomatis.</p>
-                    <div class="tech-stack">
-                        <span class="tech-tag">Laravel</span>
-                        <span class="tech-tag">HTML/CSS</span>
-                        <span class="tech-tag">Bootstrap</span>
-                    </div>
-                </div>
-            </div>
-            <div class="portfolio-item" data-category="projects">
-                <img src="images/worldwhirl.jpg" class="portfolio-img" onerror="this.outerHTML='<div class=\'portfolio-img\'>🌍</div>';">
-                <div class="portfolio-content">
-                    <h3>World Whirl</h3>
-                    <p>Aplikasi pembelajaran bahasa Inggris interaktif dengan fitur kuis, musik, dan gamifikasi.</p>
-                    <div class="tech-stack">
-                        <span class="tech-tag">Flutter</span>
-                        <span class="tech-tag">Dart</span>
-                        <span class="tech-tag">Firebase</span>
-                    </div>
-                </div>
-            </div>
-           
-            <div class="portfolio-item" data-category="certificates">
-                <img src="images/cert-web.jpg" class="portfolio-img" onerror="this.outerHTML='<div class=\'portfolio-img\'>🏆</div>';">
-                <div class="portfolio-content">
-                    <h3>Web Development</h3>
-                    <p>Full Stack Web Development Certificate - Laravel, PHP, HTML, CSS, dan JavaScript fundamentals.</p>
-                    <div class="tech-stack">
-                        <span class="tech-tag">Laravel</span>
-                        <span class="tech-tag">Full Stack</span>
-                    </div>
-                </div>
-            </div>
-            <div class="portfolio-item" data-category="certificates">
-                <img src="images/cert-uiux.jpg" class="portfolio-img" onerror="this.outerHTML='<div class=\'portfolio-img\'>🏆</div>';">
-                <div class="portfolio-content">
-                    <h3>UI/UX Design</h3>
-                    <p>UI/UX Design Fundamentals - Menguasai prinsip desain interface dan user experience dengan Figma.</p>
-                    <div class="tech-stack">
-                        <span class="tech-tag">Figma</span>
-                        <span class="tech-tag">UI/UX</span>
-                    </div>
-                </div>
-            </div>
-            <div class="portfolio-item" data-category="tech">
-                <img src="mobile.jpg" class="portfolio-img" onerror="this.outerHTML='<div class=\'portfolio-img\'>💻</div>';">
-                <div class="portfolio-content">
-                    <h3>Mobile Development</h3>
-                    <p>Expertise dalam pengembangan aplikasi mobile cross-platform dengan performa optimal.</p>
-                    <div class="tech-stack">
-                        <span class="tech-tag">Flutter</span>
-                        <span class="tech-tag">Dart</span>
-                        <span class="tech-tag">Firebase</span>
-                    </div>
-                </div>
-            </div>
-            <div class="portfolio-item" data-category="tech">
-                <img src="web.jpg" class="portfolio-img" onerror="this.outerHTML='<div class=\'portfolio-img\'>🌐</div>';">
-                <div class="portfolio-content">
-                    <h3>Web Development</h3>
-                    <p>Menguasai full-stack web development dari frontend hingga backend dengan framework modern.</p>
-                    <div class="tech-stack">
-                        <span class="tech-tag">Laravel</span>
-                        <span class="tech-tag">PHP</span>
-                        <span class="tech-tag">MySQL</span>
-                    </div>
-                </div>
-            </div>
-            <div class="portfolio-item" data-category="tech">
-                <img src="images/tech-design.jpg" class="portfolio-img" onerror="this.outerHTML='<div class=\'portfolio-img\'>🎨</div>';">
-                <div class="portfolio-content">
-                    <h3>Design & Tools</h3>
-                    <p>Skilled dalam UI/UX design dan version control untuk kolaborasi tim yang efektif.</p>
-                    <div class="tech-stack">
-                        <span class="tech-tag">Figma</span>
-                        <span class="tech-tag">Dart</span>
-                        <span class="tech-tag">Git</span>
-                        <span class="tech-tag">VS Code</span>
                     </div>
                 </div>
             </div>
@@ -344,9 +292,8 @@
             <div class="contact-info">
                 📧 <a href="mailto:nellaapriliaaa12@gmail.com">nellaapriliaaa12@gmail.com</a><br>
                 📞 +62 821-8217-4920<br>
-                🔗 <a href="https://linkedin.com/in/nella-aprilia-softwareengineer" target="_blank">linkedin.com/in/nella-aprilia-softwareengineer</a>
+                🔗 <a href="https://linkedin.com/in/nella-aprilia-softwareengineer" target="_blank">LinkedIn Profile</a>
             </div>
-            <p style="color: #ccc; margin-bottom: 2rem;">Saya terbuka untuk kolaborasi proyek, diskusi teknologi, atau peluang karir baru. Mari ciptakan solusi teknologi yang membuat perbedaan!</p>
             <a href="mailto:nellaapriliaaa12@gmail.com" class="btn btn-primary">Get In Touch</a>
         </div>
     </section>
@@ -368,7 +315,7 @@
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth', block: 'start' });
+                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
             });
         });
 
@@ -422,24 +369,21 @@
         window.onresize = () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; };
 
         // Scroll animations
-        const observer = new IntersectionObserver(function(entries) {
+        const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.style.opacity = '1';
                     entry.target.style.transform = 'translateY(0)';
                 }
             });
-        }, { threshold: 0.1, rootMargin: '0px 0px -100px 0px' });
-        document.querySelectorAll('.portfolio-item').forEach(item => {
-            item.style.opacity = '0';
-            item.style.transform = 'translateY(40px)';
-observer.observe(item);
-});
+        }, { threshold: 0.1 });
 
-document.querySelectorAll('section').forEach(section => {
-    section.style.opacity = '0';
-    section.style.transform = 'translateY(40px)';
-    section.style.transition = '1s ease';
-    observer.observe(section);
-});
-</script>
+        document.querySelectorAll('section, .tech-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.8s ease-out';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
