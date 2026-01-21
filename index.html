@@ -85,7 +85,12 @@
         .portfolio-grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; max-width: 1200px; width: 100%;}
         .portfolio-item {background: rgba(0,30,60,0.4); border: 1px solid rgba(0,100,255,0.3); border-radius: 15px; overflow: hidden; transition: all 0.4s ease; cursor: pointer;}
         .portfolio-item:hover {transform: translateY(-10px); border-color: #00d4ff; box-shadow: 0 10px 40px rgba(0,100,255,0.4);}
-        .portfolio-img {width: 100%; height: 200px; object-fit: cover; background: linear-gradient(135deg, #1e3a8a, #0c4a6e); display: flex; align-items: center; justify-content: center; font-size: 3rem;}
+        
+        /* Updated Portfolio Image container for actual images */
+        .portfolio-img-container {width: 100%; height: 200px; overflow: hidden; background: #1e293b;}
+        .portfolio-img-container img {width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;}
+        .portfolio-item:hover .portfolio-img-container img {transform: scale(1.1);}
+
         .portfolio-content {padding: 1.5rem;}
         .portfolio-content h3 {color: #00d4ff; font-size: 1.5rem; margin-bottom: 0.8rem;}
         .portfolio-content p {color: #ccc; line-height: 1.6; margin-bottom: 1rem; font-size: 0.95rem;}
@@ -188,7 +193,9 @@
         </div>
         <div class="portfolio-grid">
             <div class="portfolio-item" data-category="projects">
-                <div class="portfolio-img">📱</div>
+                <div class="portfolio-img-container">
+                    <img src="medisense.jpg" alt="MediSense Project">
+                </div>
                 <div class="portfolio-content">
                     <h3>MediSense</h3>
                     <p>Aplikasi mobile untuk deteksi dini gejala penyakit berbasis AI.</p>
@@ -199,65 +206,39 @@
                 </div>
             </div>
             <div class="portfolio-item" data-category="projects">
-                <div class="portfolio-img">🏥</div>
+                <div class="portfolio-img-container">
+                    <img src="gastrocare.jpg" alt="GastroCare Project">
+                </div>
                 <div class="portfolio-content">
                     <h3>GastroCare</h3>
-                    <p>Platform kesehatan digital khusus deteksi penyakit maag dan edukasi lambung.</p>
+                    <p>Platform kesehatan digital khusus deteksi penyakit maag.</p>
                     <div class="tech-stack">
                         <span class="tech-tag">Flutter</span>
-                        <span class="tech-tag">Cloud Firestore</span>
+                        <span class="tech-tag">Firestore</span>
                     </div>
                 </div>
             </div>
-            <div class="portfolio-item" data-category="projects">
-                <div class="portfolio-img">🌐</div>
-                <div class="portfolio-content">
-                    <h3>E-Library System</h3>
-                    <p>Sistem manajemen perpustakaan digital untuk peminjaman buku secara online.</p>
-                    <div class="tech-stack">
-                        <span class="tech-tag">PHP Laravel</span>
-                        <span class="tech-tag">MySQL</span>
-                    </div>
-                </div>
-            </div>
-            <div class="portfolio-item" data-category="projects">
-                <div class="portfolio-img">🛒</div>
-                <div class="portfolio-content">
-                    <h3>Smart Shop UI</h3>
-                    <p>Desain antarmuka aplikasi e-commerce modern dengan fokus pada user experience.</p>
-                    <div class="tech-stack">
-                        <span class="tech-tag">Figma</span>
-                        <span class="tech-tag">UI/UX</span>
-                    </div>
-                </div>
-            </div>
-            <div class="portfolio-item" data-category="projects">
-                <div class="portfolio-img">📊</div>
-                <div class="portfolio-content">
-                    <h3>Attendance App</h3>
-                    <p>Aplikasi absensi berbasis lokasi (Geotagging) untuk efisiensi data karyawan.</p>
-                    <div class="tech-stack">
-                        <span class="tech-tag">Flutter</span>
-                        <span class="tech-tag">Google Maps API</span>
-                    </div>
-                </div>
-            </div>
+        
 
             <div class="portfolio-item" data-category="certificates">
-                <div class="portfolio-img">🎓</div>
+                <div class="portfolio-img-container">
+                    <img src="cert-flutter.jpg" alt="Flutter Certificate">
+                </div>
                 <div class="portfolio-content">
-                    <h3>Flutter Developer Certification</h3>
-                    <p>Sertifikasi kompetensi dalam pengembangan aplikasi mobile multi-platform.</p>
+                    <h3>Flutter Certification</h3>
+                    <p>Sertifikasi kompetensi pengembangan aplikasi mobile.</p>
                     <div class="tech-stack">
                         <span class="tech-tag">Expertise</span>
                     </div>
                 </div>
             </div>
             <div class="portfolio-item" data-category="certificates">
-                <div class="portfolio-img">📜</div>
+                <div class="portfolio-img-container">
+                    <img src="cert-web.jpg" alt="Web Design Certificate">
+                </div>
                 <div class="portfolio-content">
-                    <h3>Responsive Web Design</h3>
-                    <p>Penyelesaian kursus pengembangan web modern yang responsif dan adaptif.</p>
+                    <h3>Web Design</h3>
+                    <p>Kursus pengembangan web modern dan responsif.</p>
                     <div class="tech-stack">
                         <span class="tech-tag">Frontend</span>
                     </div>
@@ -304,7 +285,6 @@
             const items = document.querySelectorAll('.portfolio-item');
             const buttons = document.querySelectorAll('.tab-btn');
             
-            // Highlight active tab
             buttons.forEach(btn => btn.classList.remove('active'));
             event.target.classList.add('active');
 
