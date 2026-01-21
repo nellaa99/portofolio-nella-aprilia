@@ -57,63 +57,23 @@
         .about-content h2::after {content: ''; position: absolute; bottom: -10px; left: 0; width: 100%; height: 3px; background: linear-gradient(90deg, #0064ff, #00d4ff);}
         .about-content p {font-size: 1.2rem; line-height: 1.8; color: #ccc;}
 
-        /* --- Updated Skill / Tech Stack Section --- */
+        /* Skill Section */
         #skills {flex-direction: column; background: rgba(0,20,40,0.2);}
         .skills-header {text-align: center; margin-bottom: 3rem;}
-        .skills-header h2 {font-size: 3rem; color: #a855f7; margin-bottom: 0.5rem;}
+        .skills-header h2 {font-size: 3rem; color: #00d4ff; margin-bottom: 0.5rem;}
         .skills-header p {font-size: 1.1rem; color: #94a3b8;}
 
-        .tech-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
-            max-width: 1100px;
-            width: 100%;
-        }
+        .tech-grid {display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; max-width: 1100px; width: 100%;}
+        .tech-card {background: rgba(17, 24, 39, 0.7); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 16px; padding: 2rem 1.5rem; display: flex; flex-direction: column; align-items: center; justify-content: center; transition: all 0.3s ease; backdrop-filter: blur(5px);}
+        .tech-card:hover {transform: translateY(-10px); background: rgba(31, 41, 55, 0.8); border-color: #00d4ff; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);}
+        .tech-card i {font-size: 3.5rem; margin-bottom: 1rem;}
+        .tech-card span {font-size: 1.1rem; font-weight: 500; color: #e2e8f0;}
 
-        .tech-card {
-            background: rgba(17, 24, 39, 0.7);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 16px;
-            padding: 2rem 1.5rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(5px);
-        }
+        /* Icon Colors */
+        .html-icon { color: #e34c26; } .css-icon { color: #264de4; } .js-icon { color: #f7df1e; } .tailwind-icon { color: #38bdf8; }
+        .bootstrap-icon { color: #7952b3; } .php-icon { color: #777bb4; } .firebase-icon { color: #ffca28; } .vercel-icon { color: #ffffff; }
 
-        .tech-card:hover {
-            transform: translateY(-10px);
-            background: rgba(31, 41, 55, 0.8);
-            border-color: rgba(168, 85, 247, 0.4);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-        }
-
-        .tech-card i {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .tech-card span {
-            font-size: 1.1rem;
-            font-weight: 500;
-            color: #e2e8f0;
-        }
-
-        /* Ikon Colors */
-        .html-icon { color: #e34c26; }
-        .css-icon { color: #264de4; }
-        .js-icon { color: #f7df1e; }
-        .tailwind-icon { color: #38bdf8; }
-        .bootstrap-icon { color: #7952b3; }
-        .php-icon { color: #777bb4; }
-        .firebase-icon { color: #ffca28; }
-        .vercel-icon { color: #ffffff; }
-
-        /* --- End of Skills Update --- */
-
+        /* Portfolio Section */
         #portfolio {flex-direction: column; padding: 6rem 5%;}
         .portfolio-header {text-align: center; margin-bottom: 3rem;}
         .portfolio-header h2 {font-size: 2.5rem; color: #00d4ff; margin-bottom: 1rem;}
@@ -128,7 +88,7 @@
         .portfolio-img {width: 100%; height: 200px; object-fit: cover; background: linear-gradient(135deg, #1e3a8a, #0c4a6e); display: flex; align-items: center; justify-content: center; font-size: 3rem;}
         .portfolio-content {padding: 1.5rem;}
         .portfolio-content h3 {color: #00d4ff; font-size: 1.5rem; margin-bottom: 0.8rem;}
-        .portfolio-content p {color: #ccc; line-height: 1.6; margin-bottom: 1rem;}
+        .portfolio-content p {color: #ccc; line-height: 1.6; margin-bottom: 1rem; font-size: 0.95rem;}
         .tech-stack {display: flex; flex-wrap: wrap; gap: 0.5rem;}
         .tech-tag {background: rgba(0,100,255,0.2); color: #00d4ff; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.85rem; border: 1px solid rgba(0,100,255,0.4);}
 
@@ -139,20 +99,11 @@
         .contact-info a {color: #00d4ff; text-decoration: none; transition: all 0.3s ease;}
         .contact-info a:hover {color: #fff; text-shadow: 0 0 10px rgba(0,212,255,0.5);}
 
-        @media (max-width: 1024px) {
-            .tech-grid { grid-template-columns: repeat(3, 1fr); }
-        }
-
+        @media (max-width: 1024px) { .tech-grid { grid-template-columns: repeat(3, 1fr); } }
         @media (max-width: 768px) {
-            nav ul {gap: 1rem;}
-            .welcome-title {font-size: 2.5rem;}
-            #home {flex-direction: column; text-align: center;}
-            .typing-container {font-size: 2.5rem;}
-            .profile-img {width: 250px; height: 250px;}
-            .stats-container {justify-content: center;}
-            .portfolio-tabs {flex-wrap: wrap;}
-            .portfolio-grid {grid-template-columns: 1fr;}
-            .tech-grid { grid-template-columns: repeat(2, 1fr); }
+            nav ul {gap: 1rem;} .welcome-title {font-size: 2.5rem;} #home {flex-direction: column; text-align: center;}
+            .typing-container {font-size: 2.5rem;} .profile-img {width: 250px; height: 250px;}
+            .stats-container {justify-content: center;} .tech-grid { grid-template-columns: repeat(2, 1fr); }
         }
     </style>
 </head>
@@ -201,9 +152,9 @@
         <div class="about-content">
             <h2>About Me</h2>
             <p>
-            Saya adalah mahasiswa Rekayasa Perangkat Lunak di Politeknik Manufaktur Negeri Bangka Belitung dengan minat besar pada pengembangan aplikasi web dan mobile serta UI/UX design. <br><br>
-            Selama perkuliahan, saya telah mengembangkan berbagai proyek seperti aplikasi mobile berbasis Flutter, sistem berbasis web menggunakan PHP dan Laravel, serta desain antarmuka aplikasi menggunakan Figma. <br><br>
-            Saya terbiasa menggunakan teknologi seperti Flutter, HTML, CSS, JavaScript, PHP, Laravel, MySQL, Firebase, serta tools seperti Git, GitHub, dan Figma.
+                Saya adalah mahasiswa Rekayasa Perangkat Lunak di Politeknik Manufaktur Negeri Bangka Belitung dengan minat besar pada pengembangan aplikasi web dan mobile serta UI/UX design. <br><br>
+                Selama perkuliahan, saya telah mengembangkan berbagai proyek seperti aplikasi mobile berbasis Flutter, sistem berbasis web menggunakan PHP dan Laravel, serta desain antarmuka aplikasi menggunakan Figma. <br><br>
+                Saya terbiasa menggunakan teknologi seperti Flutter, HTML, CSS, JavaScript, PHP, Laravel, MySQL, Firebase, serta tools seperti Git, GitHub, dan Figma.
             </p>
         </div>
     </section>
@@ -213,40 +164,15 @@
             <h2>Tech Stack</h2>
             <p>This is the digital footprint of my journey.</p>
         </div>
-        
         <div class="tech-grid">
-            <div class="tech-card">
-                <i class="devicon-html5-plain html-icon"></i>
-                <span>HTML</span>
-            </div>
-            <div class="tech-card">
-                <i class="devicon-css3-plain css-icon"></i>
-                <span>CSS</span>
-            </div>
-            <div class="tech-card">
-                <i class="devicon-javascript-plain js-icon"></i>
-                <span>JavaScript</span>
-            </div>
-            <div class="tech-card">
-                <i class="devicon-tailwindcss-original tailwind-icon"></i>
-                <span>Tailwind CSS</span>
-            </div>
-            <div class="tech-card">
-                <i class="devicon-bootstrap-plain bootstrap-icon"></i>
-                <span>Bootstrap</span>
-            </div>
-            <div class="tech-card">
-                <i class="devicon-php-plain php-icon"></i>
-                <span>PHP</span>
-            </div>
-            <div class="tech-card">
-                <i class="devicon-firebase-plain firebase-icon"></i>
-                <span>Firebase</span>
-            </div>
-            <div class="tech-card">
-                <i class="devicon-vercel-original vercel-icon"></i>
-                <span>Vercel</span>
-            </div>
+            <div class="tech-card"><i class="devicon-html5-plain html-icon"></i><span>HTML</span></div>
+            <div class="tech-card"><i class="devicon-css3-plain css-icon"></i><span>CSS</span></div>
+            <div class="tech-card"><i class="devicon-javascript-plain js-icon"></i><span>JavaScript</span></div>
+            <div class="tech-card"><i class="devicon-tailwindcss-original tailwind-icon"></i><span>Tailwind</span></div>
+            <div class="tech-card"><i class="devicon-bootstrap-plain bootstrap-icon"></i><span>Bootstrap</span></div>
+            <div class="tech-card"><i class="devicon-php-plain php-icon"></i><span>PHP</span></div>
+            <div class="tech-card"><i class="devicon-firebase-plain firebase-icon"></i><span>Firebase</span></div>
+            <div class="tech-card"><i class="devicon-vercel-original vercel-icon"></i><span>Vercel</span></div>
         </div>
     </section>
 
@@ -276,10 +202,64 @@
                 <div class="portfolio-img">🏥</div>
                 <div class="portfolio-content">
                     <h3>GastroCare</h3>
-                    <p>Platform kesehatan digital deteksi penyakit maag.</p>
+                    <p>Platform kesehatan digital khusus deteksi penyakit maag dan edukasi lambung.</p>
                     <div class="tech-stack">
                         <span class="tech-tag">Flutter</span>
-                        <span class="tech-tag">Firebase</span>
+                        <span class="tech-tag">Cloud Firestore</span>
+                    </div>
+                </div>
+            </div>
+            <div class="portfolio-item" data-category="projects">
+                <div class="portfolio-img">🌐</div>
+                <div class="portfolio-content">
+                    <h3>E-Library System</h3>
+                    <p>Sistem manajemen perpustakaan digital untuk peminjaman buku secara online.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">PHP Laravel</span>
+                        <span class="tech-tag">MySQL</span>
+                    </div>
+                </div>
+            </div>
+            <div class="portfolio-item" data-category="projects">
+                <div class="portfolio-img">🛒</div>
+                <div class="portfolio-content">
+                    <h3>Smart Shop UI</h3>
+                    <p>Desain antarmuka aplikasi e-commerce modern dengan fokus pada user experience.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Figma</span>
+                        <span class="tech-tag">UI/UX</span>
+                    </div>
+                </div>
+            </div>
+            <div class="portfolio-item" data-category="projects">
+                <div class="portfolio-img">📊</div>
+                <div class="portfolio-content">
+                    <h3>Attendance App</h3>
+                    <p>Aplikasi absensi berbasis lokasi (Geotagging) untuk efisiensi data karyawan.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Flutter</span>
+                        <span class="tech-tag">Google Maps API</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-item" data-category="certificates">
+                <div class="portfolio-img">🎓</div>
+                <div class="portfolio-content">
+                    <h3>Flutter Developer Certification</h3>
+                    <p>Sertifikasi kompetensi dalam pengembangan aplikasi mobile multi-platform.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Expertise</span>
+                    </div>
+                </div>
+            </div>
+            <div class="portfolio-item" data-category="certificates">
+                <div class="portfolio-img">📜</div>
+                <div class="portfolio-content">
+                    <h3>Responsive Web Design</h3>
+                    <p>Penyelesaian kursus pengembangan web modern yang responsif dan adaptif.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Frontend</span>
                     </div>
                 </div>
             </div>
@@ -323,8 +303,11 @@
         function filterPortfolio(category) {
             const items = document.querySelectorAll('.portfolio-item');
             const buttons = document.querySelectorAll('.tab-btn');
+            
+            // Highlight active tab
             buttons.forEach(btn => btn.classList.remove('active'));
             event.target.classList.add('active');
+
             items.forEach(item => {
                 if (category === 'all' || item.dataset.category === category) {
                     item.style.display = 'block';
@@ -337,7 +320,7 @@
             });
         }
 
-        // Particles
+        // Particles Background
         const canvas = document.getElementById("bg");
         const ctx = canvas.getContext("2d");
         canvas.width = window.innerWidth;
@@ -378,7 +361,7 @@
             });
         }, { threshold: 0.1 });
 
-        document.querySelectorAll('section, .tech-card').forEach(el => {
+        document.querySelectorAll('section, .tech-card, .portfolio-item').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(30px)';
             el.style.transition = 'all 0.8s ease-out';
